@@ -1,9 +1,22 @@
+// trigger whenever a key is pressed
 document.onkeypress = function(e) {
+
     if(e.key == 'c' || e.key == 'C') {
-        subList = document.getElementsByClassName("subtitle-label");
-        if(subList[0].parentElement.parentElement.className == "active")
-            subList[3].parentElement.click();
-        else
-            subList[0].parentElement.click();
+
+		// grab all subtitles
+		subList = document.getElementsByClassName("subtitle-label");
+
+		// find out engSubs and noSubs
+		for (i=0; i<subList.length; i++)
+		    if(subList[i].innerHTML == "Subtitles Off")
+		        noSubs = subList[i];
+		    else if(subList[i].innerHTML == "English")
+		       	engSubs = subList[i];
+
+		// toggling logic
+        if(noSubs.parentElement.parentElement.className == "active")
+        	engSubs.parentElement.click();
+        else noSubs.parentElement.click();
+        
     }
 }
