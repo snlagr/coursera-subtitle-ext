@@ -1,3 +1,4 @@
+let subOn = true;
 // trigger whenever a key is pressed
 document.onkeypress = function(e) {
 
@@ -17,12 +18,12 @@ document.onkeypress = function(e) {
 	}
 
 	// toggling logic
-        if(noSubs.parentElement.parentElement.className == "active"){
+        if(subOn){
         	engSubs.parentElement.click();
 	}
         else {
 		noSubs.parentElement.click();
 	}
-        
+        subOn = !subOn
     }
 }
