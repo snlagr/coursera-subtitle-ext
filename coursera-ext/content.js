@@ -1,28 +1,28 @@
-// trigger whenever a key is pressed
-document.onkeypress = function(e) {
+// Trigger whenever a key is pressed
+document.onkeydown = function (e) {
 
-    if(e.key == 'c' || e.key == 'C') {
+  if (e.key == 'c' || e.key == 'C') {
 
-	// grab all subtitles
-	subList = document.getElementsByClassName("subtitle-label");
+    // Grab all subtitles
+    subList = document.getElementsByClassName("subtitle-label");
 
-	// find out engSubs and noSubs
-	for (i=0; i<subList.length; i++) {
-	    if(subList[i].innerHTML == "Subtitles Off") {
-		noSubs = subList[i];
-	    }
-	    else if(subList[i].innerHTML == "English") {
-		engSubs = subList[i];
-	    }
-	}
+    // Find out engSubs and noSubs
+    for (i = 0; i < subList.length; i++) {
+      if (subList[i].innerHTML == "Subtitles Off") {
+        noSubs = subList[i];
+      }
 
-	// toggling logic
-        if(noSubs.parentElement.parentElement.className == "active"){
-        	engSubs.parentElement.click();
-	}
-        else {
-		noSubs.parentElement.click();
-	}
-        
+      else if (subList[i].innerHTML == "English") {
+        engSubs = subList[i];
+      }
     }
+
+    // Toggling logic
+    if (noSubs.parentElement.parentElement.className == "active") {
+      engSubs.parentElement.click();
+    }
+    else {
+      noSubs.parentElement.click();
+    }
+  }
 }
