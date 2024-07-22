@@ -1,3 +1,5 @@
+let areSubsOn = true
+
 // Trigger whenever a key is pressed
 document.onkeydown = function (e) {
 
@@ -16,13 +18,15 @@ document.onkeydown = function (e) {
         engSubs = subList[i];
       }
     }
-
+    
     // Toggling logic
-    if (noSubs.parentElement.parentElement.className == "active") {
-      engSubs.parentElement.click();
+    if (areSubsOn) {
+      noSubs.parentElement.click();
+      areSubsOn = false
     }
     else {
-      noSubs.parentElement.click();
+      engSubs.parentElement.click();
+      areSubsOn = true
     }
   }
 }
